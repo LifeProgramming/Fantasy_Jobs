@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Authentication
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'authentications.css'%}">
+{% endblock %}
+
+
+
+
+{% block body%}
+
+    
+        <div class="content">
+        <!-- Main Content -->
+        <!-- Register Form -->
+        <form class="register-form" method="POST">
+            {%csrf_token%}
+            <h2>Register As a Recruiter</h2>
+            {% for field in form%}
+            <label >Enter the {{field.label}}:</label>
+            {{field}}
+            {% endfor%}
+       
+            <button type="submit" class="register-button">Register</button>
+            <a href="{% url 'login' %}" class="register-link">If you have an account, login!</a>
+            <br>
+            <a href="{% url 'register' %}" class="register-link">If you are a job seeker, register as a job seeker!</a>
+        </form>
+    </div>
+   
+
+
+
+{% endblock %}

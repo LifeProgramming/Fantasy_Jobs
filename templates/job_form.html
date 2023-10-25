@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+New Job Position
+{% endblock%}
+
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'job_form.css' %}">
+{% endblock%}
+
+
+
+{% block body%}
+
+<!-- Main Content -->
+<div class="content">
+    <!-- Job Post Form -->
+    <form method="POST" class="job-post-form">
+        {% csrf_token%}
+        <h1 class="form-title">New Job Position</h1>
+        {% for field in form %}
+        <label >Enter the job {{field.label}}</label>
+        {{field}}
+        {% endfor%}
+
+        <!-- <label >Enter the job title: </label>
+        <input type="text" placeholder="Job Title" required>
+        <label >Enter the job location: </label>
+        <input type="text" placeholder="Job Location"  required>
+        <label >Enter the job salary: </label>
+        <input type="text" placeholder="Job Salary" required>
+        <label >Enter the job description: </label>
+        <textarea placeholder="Job Description" required></textarea> -->
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+{% endblock %}

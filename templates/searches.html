@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Searches
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'jobs.css' %}">
+{% endblock%}
+
+{% block body%}
+
+
+{%for job in items%}
+<ul class="job-list">
+    <li class="job-post">
+        <p class="job-title">{{job.title}}</p>
+        <p class="job-location">Location: {{job.location}}</p>
+        <a href="{% url 'job-detail' job.id %}" class="job-detail-button">Job Detail</a>
+    </li>
+</ul>
+
+{% endfor%}
+
+
+
+<div class="paginator">
+    {% if items.has_previous%}
+    <a href="?page={{items.previous_page_number}}" class="prev-page">Previous</a>
+    {% endif%}
+    <span class="current-page">Page {{items.number}} of {{items.paginator.num_pages}}</span>
+    {% if items.has_next%}
+    <a href="?page={{items.next_page_number}}" class="next-page">Next</a>
+    {% endif%}
+</div>
+
+
+{% endblock %}

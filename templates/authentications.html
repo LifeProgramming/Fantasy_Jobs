@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Authentication
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'authentications.css'%}">
+{% endblock %}
+
+
+
+
+{% block body%}
+{% if page == 'login' %}
+
+<!-- Main Content -->
+<div class="content">
+    <!-- Login Form -->
+    <form class="login-form" method="POST">
+        {%csrf_token%}
+        <h2>Login</h2>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="login-button">Login</button>
+        <a href="{% url 'register' %}" class="register">If you haven't any accounts, register now! </a>
+    </form>
+</div>
+
+{% else %}
+    
+        <div class="content">
+        <!-- Main Content -->
+        <!-- Register Form -->
+        <form class="register-form" method="POST">
+            {%csrf_token%}
+            <h2>Register As a Job Seeker</h2>
+            {% for field in form%}
+            <label >Enter the {{field.label}}:</label>
+            {{field}}
+            {% endfor%}
+       
+            <button type="submit" class="register-button">Register</button>
+            <a href="{% url 'login' %}" class="register-link">If you have an account, login!</a>
+            <br>
+            <a href="{% url 'recruiter' %}" class="register-link">If you are a recruiter, register as a recruiter</a>
+        </form>
+    </div>
+   
+
+{% endif %}
+
+{% endblock %}

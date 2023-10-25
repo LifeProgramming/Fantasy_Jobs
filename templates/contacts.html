@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Contacts Ways
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'contacts.css'%}">
+{% endblock %}
+
+
+
+
+{% block body%}
+<div class="content">
+    <p>Name: {{recruiter.name}}</p>
+    <p>Phone: {{recruiter.phoneNumber}} </p>
+    <p>Email: {{recruiter.email}}</p>
+    {%if recruiter.linkedIn%}
+    <p> LinkedIn: {{recruiter.linkedIn}}</p>
+    {%endif%}
+    {%if recruiter.instagram%}
+    <p>Instagram: {{recruiter.instagram}}</p>
+    {%endif%}
+    <button class="back"><a href="{{request.META.HTTP_REFERER}}">Back</a></button>
+</div>
+{% endblock %}

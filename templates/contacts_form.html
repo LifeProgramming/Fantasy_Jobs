@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Home
+{% endblock%}
+
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'contact_form.css' %}">
+{% endblock%}
+
+
+
+{% block body%}
+<!-- Main Content -->
+
+<div class="content">
+    <!-- Contact Completing Form -->
+    <form method="POST"  class="contact-form">
+        {% csrf_token%}
+        <h1 class="form-title">Contact Ways</h1>
+        {% for field in form%}
+        <label >{{field.label}}:</label>
+        {{field}}
+        {% endfor%}
+        
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,239 @@
+ /* Reset some default styles */
+ body, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style for the navbar */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the home page link */
+.home-link {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ff6f61;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s;
+}
+
+.home-link:hover {
+    color: #ff3b3f;
+}
+
+/* Style for the search box */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    width: 300px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    color: #333;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.search-box:focus{
+    outline: none;
+}
+
+.search-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #ff3b3f;
+}
+
+/* Style for the job list */
+.job-list {
+    list-style: none;
+    padding: 20px;
+}
+
+/* Style for each job post */
+.job-post {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style for the job title */
+.job-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Style for the job location */
+.job-location {
+    color: #777;
+}
+
+/* Style for the job detail button */
+.job-detail-button {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition:  0.3s;
+}
+
+/* Hover effect for the job detail button */
+.job-detail-button:hover {
+    background-color: #ff3b3f;
+}
+
+
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .current-page {
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  
+ 
+  .prev-page,
+  .next-page {
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff3b3f, #ff6f61);
+    
+  }
+  
+  .prev-page:hover,
+  .next-page:hover {
+    background-color: #005a9e;
+  }
+  
+  .search-box {
+    width: 300px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    color: #333;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.search-box:focus{
+    outline: none;
+}
+
+.search-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #ff3b3f;
+}
+
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .current-page {
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  
+ 
+  .prev-page,
+  .next-page {
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff3b3f, #ff6f61);
+    
+  }
+  
+  .prev-page:hover,
+  .next-page:hover {
+    background-color: #005a9e;
+  }
+  .lo-link{
+    text-decoration: none;
+    color: white;
+}
+.se-link{
+    text-decoration: none;
+    color: white;
+}
+.logout{
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;    
+}
+.logout:hover{
+    background-color: #ff3b3f;
+}
+
+
+.job-posted{
+    display: inline-block;
+    background-color: #ff6f61;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition:  0.3s;
+    transform: translateX(30px);
+}
+.job-posted:hover{
+    background-color: #ff3b3f;
+}

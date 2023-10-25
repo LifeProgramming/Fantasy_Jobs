@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Home
+{% endblock%}
+
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock%}
+
+
+
+{% block body%}
+
+<div class="content">
+    <h1 class="question">What is your role?</h1>
+    <a href="{% url 'recruiter' %}" class="button">Recruiter</a>
+    <a href="{% url 'jobs' %}" class="button">Job Seeker</a>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block title%}
+Job Detail
+{% endblock%}
+
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'jobDetail.css' %}">
+{% endblock%}
+
+
+
+{% block body%}
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Job Details -->
+        <div class="job-detail">
+            <p class="job-title">{{job.title}}</p>
+            <p class="job-info">Location: {{job.location}}</p>
+            <p class="job-info">Salary: {{job.salary}}</p>
+            <p class="job-description">
+                {{job.description}}
+            </p>
+            <p class="job-date">
+                Posted {{job.posted_date | timesince}} ago
+            </p>
+        </div>
+
+        <!-- "View The Contacting Ways" Button -->
+        <a href="{% url 'contacts' job.id%}" class="contact-button">View The Contacting Ways</a>
+        <br>
+        {% if group == 'Recruiter'%}
+        {% if job_recruiter == request.user%}
+        <a href="{% url 'delete-job' job.id%}" class="job-operators">Delete This Job</a>
+        <br>
+        <a href="{% url 'update-job' job.id%}" class="job-operators">Edit This Job</a>
+        <br>
+        {% endif%}
+        {% endif%}
+        <button class="back"><a href="{% url 'jobs' %}">Back</a></button>
+    </div>
+{% endblock %}

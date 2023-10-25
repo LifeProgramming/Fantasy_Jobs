@@ -1,0 +1,14 @@
+
+<div class="navbar">
+    <a href="#" class="home-link">Fantasy Jobs</a>
+    <div class="search-container">
+        <form class="form" action="{% url 'search'%}" method="POST">
+        {% csrf_token%}
+        <input type="search" name="se" class="search-box" placeholder="Search for jobs">
+        <button class="search-button" type="submit">Search</button>
+        </form>
+        {% if request.user.is_authenticated%}
+        <button class="logout"><a class="lo-link" href="{% url 'logout' %}">Log Out</a></button>
+        {% endif%}
+    </div>
+</div>
