@@ -18,14 +18,24 @@ Jobs List
         <p class="job-title">{{job.title}}</p>
         <p class="job-location">Location: {{job.location}}</p>
         <a href="{% url 'job-detail' job.id %}" class="job-detail-button">Job Detail</a>
+        
     </li>
 </ul>
 
 {% endfor%}
 
 
+{% if group == 'Job_Seeker'%}
+<a href="{% url 'saved-jobs'%}" class="job-posted">Your Saved Jobs</a>
+<a href="{% url 'j-home'%}" class="job-posted">Your Profile</a>
+    <a href="{% url 'applied-jobs'%}" class="job-posted">Applied Jobs</a>
+{% endif%}
+
+
+
 {% if group == 'Recruiter'%}
 <a href="{% url 'posted-jobs'%}" class="job-posted">Your Posted Jobs</a>
+
 {% endif %}
 <div class="paginator">
     {% if items.has_previous%}

@@ -31,11 +31,19 @@ Job Detail
         <!-- "View The Contacting Ways" Button -->
         <a href="{% url 'contacts' job.id%}" class="contact-button">View The Contacting Ways</a>
         <br>
+        {% if group == 'Job_Seeker'%}
+        <a href="{% url 'save-job' job.id%}" class="job-operators">Save This Job</a>
+        <a href="{% url 'apply' job.id%}" class="job-operators">Apply For This Job</a>
+
+        {% endif%}
+        <br>
         {% if group == 'Recruiter'%}
         {% if job_recruiter == request.user%}
         <a href="{% url 'delete-job' job.id%}" class="job-operators">Delete This Job</a>
         <br>
         <a href="{% url 'update-job' job.id%}" class="job-operators">Edit This Job</a>
+        <br>
+        <a href="{% url 'applieds' job.id%}" class="job-operators">Applied Job Seekers</a>
         <br>
         {% endif%}
         {% endif%}

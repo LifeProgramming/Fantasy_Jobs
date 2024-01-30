@@ -1,4 +1,6 @@
 from django.http import HttpResponseForbidden, HttpResponse
+from .models import  JobSeeker
+from django.shortcuts import redirect
 
 
 def authenticatedUser(view_func):
@@ -8,6 +10,16 @@ def authenticatedUser(view_func):
         else:
             return view_func(request, *args, **kwargs)
     return wrapper_func
+
+def profileMaking(view_func):
+    def wrapper_func(request,*args,**kwargs):
+        try:
+            profile = JobSeeker.objects.get(user=request.user)
+            if profile:
+                return view_func(request,*args,**kwargs)
+        except:
+            return  redirect('profile')
+    return  wrapper_func
 
 def allowed_users(allowed_roles=[]):
     def decorator(view_func):

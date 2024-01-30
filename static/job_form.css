@@ -68,6 +68,8 @@ a{
 
 /* Style for the input fields */
 input[type="text"],
+input[type='email'],
+input[type='date'],
 textarea {
     width: 90%;
     padding: 10px;
