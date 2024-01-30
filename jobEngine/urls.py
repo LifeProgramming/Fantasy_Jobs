@@ -41,7 +41,6 @@ urlpatterns=[
     path('resume/', views.resumeView, name='resume'),
     path('apply/<int:pk>', views.applyJob, name='apply'),
     path('applied-job-seekers/<int:pk>', views.appliedJobSeekers, name='applieds'),
-    # path('resume-download/', GeneratePdf.as_view(),name='resume-download'),
     path('applied-jobs/', views.appliedJobs,name='applied-jobs'),
     path('unapply/<int:pk>', views.unapplyJob,name='unapply-job'),
     path('job-seeker-resume/<int:pk>',views.jobSeekerResumeView, name='job-seeker-resume'),
