@@ -1,4 +1,4 @@
-New features in this version:
+#New features in this version:
 1) Saving jobs by the job seeker and view that job later in saved jobs list.
 2) getting the jobs api and using Json datas in developing other applications.
 3) adding jobs application by the job seeker.
